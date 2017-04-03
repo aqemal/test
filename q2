@@ -1,0 +1,50 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package javaapplication4;
+
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+
+
+/**
+ *
+ * @author aqmal
+ */
+public class JavaApplication4 {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+    SmallBinaryFiles binary = new SmallBinaryFiles();
+    byte[] bytes = binary.readSmallBinaryFile(FILE_NAME);
+    log("Small - size of file read in:" + bytes.length);
+    binary.writeSmallBinaryFile(bytes, OUTPUT_FILE_NAME);
+  }
+
+  final static String FILE_NAME = "C:\\Temp\\input.java";
+  final static String OUTPUT_FILE_NAME = "C:\\Temp\\output.java";
+  
+  byte[] readSmallBinaryFile(String aFileName) throws IOException {
+    Path path = Paths.get(aFileName);
+    return Files.readAllBytes(path);
+  }
+  
+  void writeSmallBinaryFile(byte[] aBytes, String aFileName) throws IOException {
+    Path path = Paths.get(aFileName);
+    Files.write(path, aBytes); //creates, overwrites
+  }
+  
+  private static void log(Object aMsg){
+    System.out.println(String.valueOf(aMsg));
+  }
+  
+}  
+   
+    
+
