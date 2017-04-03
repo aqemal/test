@@ -1,0 +1,25 @@
+import static java.nio.file.StandardOpenOption.*;
+import java.nio.file.*;
+import java.io.*;
+
+public class JavaApplication3 {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        int abc =  0;
+    byte data[] = a.getBytes();
+    Path p = Paths.get("./logfile.txt");
+    {
+    while ((abc = readABC.read())!= -1){
+        system.out.print ((char)) abc);
+    }
+
+    try (OutputStream out = new BufferedOutputStream(
+      readABC.close();
+    } catch (IOException x) {
+      System.err.println(x);
+    }
+  }
+}
